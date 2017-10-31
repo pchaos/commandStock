@@ -61,7 +61,14 @@ class StockInfo:
 if __name__ == '__main__':
     stocks = ['sh600888','sz300104','sz300027','sz000919']
     stStr=''
+    i=0
     for stock in stocks:
-
-        StockInfo.GetStockInfo(stock)
+        print(stock)
+        stStr+=stock + ','
+        print(stStr)
+        i+=1
+        if (i%10==0 or stock == stocks[len(stocks)-1]):
+            StockInfo.GetStockInfo(stStr)
+            stStr=''
+            
 
